@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-content>
+<mat-form-field appearance="fill">
+  <mat-label>Escolha o jogo</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let game of listGames" [value]="listGames">
+      {{game.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  </mat-card-content>
+</mat-card>

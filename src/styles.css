@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.header {
+  background-color: #5734f4;
+  color: white;
+  text-align: center;
+
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.title-header{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  text-transform: uppercase;
+  margin-right: 5px;
+  padding: 0;
+}
+
+
+.mat-toolbar ,header mat-toolbar-single-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
