@@ -1,33 +1,59 @@
 import { Component, OnInit } from '@angular/core';
 import { GameDropdown } from 'src/app/model/game-dropdown';
+import { Game } from 'src/app/model/Game';
 import { GameService } from 'src/app/services/game.service';
-interface Food {
-  value: string;
-  viewValue: string;
-}
 @Component({
   selector: 'app-games-list',
   templateUrl: './games-list.component.html',
-  styleUrls: ['./games-list.component.css']
+  styleUrls: ['./games-list.component.css'],
 })
 export class GamesListComponent implements OnInit {
-
-  listGames: GameDropdown[] = [];
-  constructor(private gameService: GameService) { }
+  gamesDropdown: GameDropdown[] = [];
+  listGames: Game[] = [];
+  selected = "";
+  currentGame: Game = {
+    id: 2,
+    description: "Kratos e Atreus devem viajar pelos Nove Reinos em busca de respostas enquanto as forças asgardianas se preparam para uma batalha profetizada que causará o fim do mundo. Nessa jornada, eles explorarão paisagens míticas impressionantes e enfrentarão inimigos aterradores: deuses nórdicos e monstros.",
+    genre: "Action",
+    developer: "Sony Santa Monica",
+    name: "God of War Ragnarök",
+    plataform: "Playstation 5",
+    publisher: "Sony Interactive Entertainment",
+    releaseDate: "2021-11-12T00:00:00.000+00:00"
+  };
+  constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
     this.fillDropdown();
+    this.getAllGames();
+    // this.getCurrentGame();
   }
 
-  fillDropdown(){
-    this.gameService.findAllDropdown().subscribe((data) => {
+  getAllGames(): void {
+    this.gameService.findAllGames().subscribe((data) => {
       this.listGames = data;
-    })
+    });
   }
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
+  onGameChange(event: any) {
+    if(event.value != null){
+      this.currentGame = event.value
+      this.getCurrentGame();
+    }
+  }
+
+  getCurrentGame(){
+    this.listGames.map((game) => {
+      if (game.id == this.currentGame.id) {
+        this.currentGame = game;
+      }
+    });
+  }
+
+  fillDropdown() {
+    this.gameService.findAllDropdown().subscribe((data) => {
+      this.gamesDropdown = data;
+      console.log(this.gamesDropdown);
+    });
+  }
 }

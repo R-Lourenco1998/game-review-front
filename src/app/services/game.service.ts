@@ -13,7 +13,7 @@ export class GameService {
   constructor(private http: HttpClient) {}
 
   findAllGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(`${this.baseUrl}/game`);
+    return this.http.get<Game[]>(`${this.baseUrl}/api/game`);
   }
 
   findAllDropdown(): Observable<GameDropdown[]> {

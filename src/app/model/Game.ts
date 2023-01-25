@@ -4,7 +4,7 @@ export interface Game{
   description: string;
   genre: string;
   plataform: string;
-  releaseDate: Date;
+  releaseDate: string;
   developer: string;
   publisher: string;
 }
