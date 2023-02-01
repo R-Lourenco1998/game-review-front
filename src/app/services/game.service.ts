@@ -16,6 +16,10 @@ export class GameService {
     return this.http.get<Game[]>(`${this.baseUrl}/api/game`);
   }
 
+  findGameById(id: number): Observable<Game> {
+    return this.http.get<Game>(`${this.baseUrl}/api/game/${id}`);
+  }
+
   findAllDropdown(): Observable<GameDropdown[]> {
     return this.http.get<GameDropdown[]>(`${this.baseUrl}/api/game/list`);
   }

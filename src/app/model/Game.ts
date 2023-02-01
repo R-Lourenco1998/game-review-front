@@ -7,4 +7,5 @@ export interface Game{
   releaseDate: string;
   developer: string;
   publisher: string;
+  imageUrl: string;
 }

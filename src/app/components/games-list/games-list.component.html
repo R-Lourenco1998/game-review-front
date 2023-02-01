@@ -1,50 +1,17 @@
 <mat-card>
-  <mat-card-header>
-    <mat-form-field appearance="fill">
-      <mat-label>Escolha o jogo:</mat-label>
-      <!-- <div *ngIf="currentGame.name == null">
-        <h2>ERRO: ESCOLHA UM JOGO!!!</h2>
-      </div> -->
-      <mat-select (selectionChange)="onGameChange($event)" #select>
-        <mat-option>Nenhum</mat-option>
-        <mat-option *ngFor="let game of gamesDropdown" [value]="game">
-          {{ game.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-card-header>
+  <mat-card-header class="game_list_title">Games</mat-card-header>
   <mat-card-content>
-    <div class="container" *ngIf="select.value != null || undefined">
-      <div>
-        <h2>
-          {{ currentGame.name }}
-          <p>By: {{ currentGame.developer }}</p>
-        </h2>
-
-        <ng-container>
-          <div *ngIf="currentGame.name == 'The Last of Us Part 1'">
-            <img
-              #tlou
-              mat-card-image
-              src="../../../assets/img/the-last-of-us.png"
-              style="width: 600px; height: 375px"
-              alt="game"
-            />
-          </div>
-          <div *ngIf="currentGame.name == 'God of War Ragnarök'">
-            <img
-              #gow
-              mat-card-image
-              src="../../../assets/img/god_of_war.jpg"
-              style="width: 600px; height: 375px"
-              alt="game"
-            />
-          </div>
-        </ng-container>
-        <div style="width: 20rem; height: 40rem">
-          <p style="text-align: left">{{ currentGame.description }}</p>
-        </div>
-      </div>
-    </div>
+    <section class="listagem">
+      <ng-template ngFor let-game [ngForOf]="AllGames">
+        <a [routerLink]="['details', game.id]" class="game" *ngIf="game.name">
+          <img
+            mat-card-image
+            [src]="game.imageUrl"
+            class="game-cover"
+            [alt]="game.name"
+          />
+        </a>
+      </ng-template>
+    </section>
   </mat-card-content>
 </mat-card>

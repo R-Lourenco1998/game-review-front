@@ -11,6 +11,7 @@ export class GamesListComponent implements OnInit {
   gamesDropdown: GameDropdown[] = [];
   listGames: Game[] = [];
   selected = "";
+  public AllGames: any;
   currentGame: Game = {
     id: 2,
     description: "Kratos e Atreus devem viajar pelos Nove Reinos em busca de respostas enquanto as forças asgardianas se preparam para uma batalha profetizada que causará o fim do mundo. Nessa jornada, eles explorarão paisagens míticas impressionantes e enfrentarão inimigos aterradores: deuses nórdicos e monstros.",
@@ -19,7 +20,8 @@ export class GamesListComponent implements OnInit {
     name: "God of War Ragnarök",
     plataform: "Playstation 5",
     publisher: "Sony Interactive Entertainment",
-    releaseDate: "2021-11-12T00:00:00.000+00:00"
+    releaseDate: "2021-11-12T00:00:00.000+00:00",
+    imageUrl: "",
   };
   constructor(private gameService: GameService) {}
 
@@ -32,6 +34,8 @@ export class GamesListComponent implements OnInit {
   getAllGames(): void {
     this.gameService.findAllGames().subscribe((data) => {
       this.listGames = data;
+      this.AllGames = data;
+      console.log(this.AllGames)
     });
   }
 

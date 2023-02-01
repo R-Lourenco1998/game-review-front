@@ -43,3 +43,39 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-info{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.game-cover{
+  width: 220px;
+  height: 270px;
+  margin-right: 10px;
+}
+
+.game {
+  text-decoration: none;
+  color: black
+}
+
+.game_page_title{
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
