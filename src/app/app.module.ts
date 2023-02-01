@@ -11,6 +11,7 @@ import { NavComponent } from './template/nav/nav.component';
 import { GamesListComponent } from './components/games-list/games-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GameDetailsComponent } from './components/game-details/game-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     NavComponent,
     GamesListComponent,
-    HomeComponent
+    HomeComponent,
+    GameDetailsComponent
   ],
   imports: [
     BrowserModule,
