@@ -1,6 +1,7 @@
 mat-card {
   height: 100%;
-  width: 100%;
+  width: 40%;
+
 }
 
 .container {
@@ -16,19 +17,20 @@ mat-card {
 }
 
 .game-cover {
-  width: 220px;
-  height: 270px;
+  height: 158px;
+  width: 288px;
+  background: black;
   margin-right: 10px;
 }
 
 .listagem {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .game_list_title{
-  justify-content: center;
+  justify-content: flex-start;
   font-weight: bold;
   font-size: 20px;
 }

@@ -2,14 +2,16 @@
   <div class="game_page_title">{{ game.name }}</div>
   <div>
     <img mat-card-image [src]="game.imageCoverUrl" class="" [alt]="game.name" />
-    <div class="subtitle">
-      Data de lançamento:
-      {{ game.releaseDate | date : "longDate" : "" : "pt-BR" }}
+
+    <div style="display: flex; flex-direction: row; align-items: flex-start">
+      <div>
+        <div class="subtitle">Data de lançamento: {{ game.releaseDate | date : "shortDate" : "" : "pt-BR" }}</div>
+        <div class="subtitle">Desenvolvido por: {{ game.developer }}</div>
+        <div class="subtitle">Publicado por: {{ game.publisher }}</div>
+        <div class="subtitle">Plataformas: {{ game.platform }}</div>
+        <div class="subtitle">Gênero: {{ game.genre }}</div>
+      </div>
+      <div class="description">{{ game.description }}</div>
     </div>
-    <div class="subtitle">Desenvolvido por: {{ game.developer }}</div>
-    <div class="subtitle">Publicado por: {{ game.publisher }}</div>
-    <div class="subtitle">Plataformas: {{ game.platform }}</div>
-    <div class="subtitle">Gênero: {{ game.genre }}</div>
-    <div class="description">{{ game.description }}</div>
   </div>
 </div>

@@ -10,10 +10,21 @@ body {
 }
 
 .header {
-  background-color: #5734f4;
+  background-color: rgb(35, 35, 35);
   color: white;
   text-align: center;
 
+}
+
+.title-header{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  text-transform: uppercase;
+  margin-right: 5px;
+  padding: 0;
+  color: white;
 }
 
 .mat-toolbar-row, .mat-toolbar-single-row {
@@ -26,17 +37,6 @@ body {
   white-space: nowrap;
   justify-content: center;
 }
-
-.title-header{
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.6;
-  letter-spacing: 0.0075em;
-  text-transform: uppercase;
-  margin-right: 5px;
-  padding: 0;
-}
-
 
 .mat-toolbar ,header mat-toolbar-single-row{
   display: flex;
