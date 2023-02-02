@@ -12,7 +12,9 @@ import { GamesListComponent } from './components/games-list/games-list.component
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
-
+import { registerLocaleData } from '@angular/common';
+import localePT from '@angular/common/locales/pt';
+registerLocaleData(localePT);
 @NgModule({
   declarations: [
     AppComponent,
