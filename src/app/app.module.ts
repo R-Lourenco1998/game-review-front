@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
+import { GamesFormComponent } from './components/games-form/games-form.component';
 registerLocaleData(localePT);
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ registerLocaleData(localePT);
     NavComponent,
     GamesListComponent,
     HomeComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    GamesFormComponent
   ],
   imports: [
     BrowserModule,
