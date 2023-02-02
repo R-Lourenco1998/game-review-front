@@ -3,9 +3,10 @@ export interface Game{
   name: string;
   description: string;
   genre: string;
-  plataform: string;
+  platform: string;
   releaseDate: string;
   developer: string;
   publisher: string;
   imageUrl: string;
+  imageCoverUrl: string;
 }

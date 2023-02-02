@@ -1,31 +1,15 @@
-<mat-card class="details">
-  <mat-card-header class="game_page_title">{{ game.name }}</mat-card-header>
-  <mat-card-subtitle>{{ game.releaseDate }} Desenvolvido por: {{game.developer}}</mat-card-subtitle>
-  <mat-card-content>
-    <div class="card">
-      <img
-        mat-card-image
-        [src]="game.imageUrl"
-        class="game-cover"
-        [alt]="game.name"
-      />
-      <div>
-        {{ game.description }}
-      </div>
+<div class="card">
+  <div class="game_page_title">{{ game.name }}</div>
+  <div>
+    <img mat-card-image [src]="game.imageCoverUrl" class="" [alt]="game.name" />
+    <div class="subtitle">
+      Data de lançamento:
+      {{ game.releaseDate | date : "longDate" : "" : "pt-BR" }}
     </div>
-  </mat-card-content>
-</mat-card>
-
-<style>
-  .card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .game-cover {
-    width: 250px;
-    height: 300px;
-    margin-right: 20px;
-  }
-</style>
+    <div class="subtitle">Desenvolvido por: {{ game.developer }}</div>
+    <div class="subtitle">Publicado por: {{ game.publisher }}</div>
+    <div class="subtitle">Plataformas: {{ game.platform }}</div>
+    <div class="subtitle">Gênero: {{ game.genre }}</div>
+    <div class="description">{{ game.description }}</div>
+  </div>
+</div>

@@ -67,15 +67,3 @@ body {
   text-decoration: none;
   color: black
 }
-
-.game_page_title{
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.6;
-  letter-spacing: 0.0075em;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}

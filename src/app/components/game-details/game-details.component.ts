@@ -11,14 +11,15 @@ import { GameService } from 'src/app/services/game.service';
 export class GameDetailsComponent implements OnInit {
   game: Game = {
     id: 1,
-    name: '',
-    description: '',
-    genre: '',
-    plataform: '',
-    releaseDate: '',
-    developer: '',
-    publisher: '',
-    imageUrl: '',
+    name: "",
+    description: "",
+    genre: "",
+    platform: "",
+    releaseDate: "",
+    developer: "",
+    publisher: "",
+    imageUrl: "",
+    imageCoverUrl: ""
   };
   constructor(
     private gameService: GameService,
