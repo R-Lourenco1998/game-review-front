@@ -27,7 +27,7 @@ export class GamesListComponent implements OnInit {
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
-    this.fillDropdown();
+    //this.fillDropdown();
     this.getAllGames();
     // this.getCurrentGame();
   }
@@ -36,7 +36,6 @@ export class GamesListComponent implements OnInit {
     this.gameService.findAllGames().subscribe((data) => {
       this.listGames = data;
       this.AllGames = data;
-      console.log(this.AllGames)
     });
   }
 
@@ -58,7 +57,6 @@ export class GamesListComponent implements OnInit {
   fillDropdown() {
     this.gameService.findAllDropdown().subscribe((data) => {
       this.gamesDropdown = data;
-      console.log(this.gamesDropdown);
     });
   }
 }

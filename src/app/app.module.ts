@@ -15,6 +15,7 @@ import { GameDetailsComponent } from './components/game-details/game-details.com
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 import { GamesFormComponent } from './components/games-form/games-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 registerLocaleData(localePT);
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ registerLocaleData(localePT);
     BrowserAnimationsModule,
     SharedModule,
     AppMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

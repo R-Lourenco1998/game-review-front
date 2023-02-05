@@ -1,0 +1,26 @@
+.form {
+  width: 40%;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.full-width {
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+  margin: .5rem auto;
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
