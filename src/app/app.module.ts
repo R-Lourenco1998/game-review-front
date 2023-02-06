@@ -16,6 +16,7 @@ import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 import { GamesFormComponent } from './components/games-form/games-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 registerLocaleData(localePT);
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ registerLocaleData(localePT);
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ {
+    provide: MAT_DATE_LOCALE, useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
