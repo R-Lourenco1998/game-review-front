@@ -30,7 +30,7 @@ export class GamesFormComponent implements OnInit {
     name: '',
     description: '',
     genre: '',
-    platform: '',
+    platforms: '',
     releaseDate: '',
     developer: '',
     publisher: '',
@@ -77,7 +77,7 @@ export class GamesFormComponent implements OnInit {
     this.game.name = this.gameForm.get('name')?.value;
     this.game.description = this.gameForm.get('description')?.value;
     this.game.genre = this.gameForm.get('genre')?.value;
-    this.game.platform = this.gameForm.get('platform')?.value;
+    this.game.platforms = this.gameForm.get('platform')?.value;
     this.game.releaseDate = this.gameForm.get('releaseDate')?.value;
     this.game.developer = this.gameForm.get('developer')?.value;
     this.game.publisher = this.gameForm.get('publisher')?.value;

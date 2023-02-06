@@ -14,7 +14,7 @@ export class GameDetailsComponent implements OnInit {
     name: "",
     description: "",
     genre: "",
-    platform: "",
+    platforms: "",
     releaseDate: "",
     developer: "",
     publisher: "",

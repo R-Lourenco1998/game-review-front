@@ -18,7 +18,7 @@ export class GamesListComponent implements OnInit {
     genre: "Action",
     developer: "Sony Santa Monica",
     name: "God of War Ragnarök",
-    platform: "Playstation 5",
+    platforms: "Playstation 5",
     publisher: "Sony Interactive Entertainment",
     releaseDate: "2021-11-12T00:00:00.000+00:00",
     imageUrl: "",
