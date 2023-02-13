@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Game } from 'src/app/model/Game';
+import { Game } from 'src/app/model/Game.model';
 import { GameService } from 'src/app/services/game.service';
 
 @Component({
@@ -9,18 +9,9 @@ import { GameService } from 'src/app/services/game.service';
   styleUrls: ['./game-details.component.css'],
 })
 export class GameDetailsComponent implements OnInit {
-  game: Game = {
-    id: 1,
-    name: "",
-    description: "",
-    genre: "",
-    platforms: "",
-    releaseDate: "",
-    developer: "",
-    publisher: "",
-    imageUrl: "",
-    imageCoverUrl: ""
-  };
+
+  game = new Game();
+
   constructor(
     private gameService: GameService,
     private activatedRoute: ActivatedRoute

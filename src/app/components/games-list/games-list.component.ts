@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameDropdown } from 'src/app/model/game-dropdown';
-import { Game } from 'src/app/model/Game';
+import { Game } from 'src/app/model/Game.model';
+import { Platform } from 'src/app/model/Platform.model';
 import { GameService } from 'src/app/services/game.service';
 @Component({
   selector: 'app-games-list',
@@ -10,26 +11,15 @@ import { GameService } from 'src/app/services/game.service';
 export class GamesListComponent implements OnInit {
   gamesDropdown: GameDropdown[] = [];
   listGames: Game[] = [];
-  selected = "";
+  selected = '';
   public AllGames: any;
-  currentGame: Game = {
-    id: 2,
-    description: "Kratos e Atreus devem viajar pelos Nove Reinos em busca de respostas enquanto as forças asgardianas se preparam para uma batalha profetizada que causará o fim do mundo. Nessa jornada, eles explorarão paisagens míticas impressionantes e enfrentarão inimigos aterradores: deuses nórdicos e monstros.",
-    genre: "Action",
-    developer: "Sony Santa Monica",
-    name: "God of War Ragnarök",
-    platforms: "Playstation 5",
-    publisher: "Sony Interactive Entertainment",
-    releaseDate: "2021-11-12T00:00:00.000+00:00",
-    imageUrl: "",
-    imageCoverUrl: ""
-  };
+  currentGame = new Game();
+
+  platform = new Platform();
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
-    //this.fillDropdown();
     this.getAllGames();
-    // this.getCurrentGame();
   }
 
   getAllGames(): void {
@@ -40,13 +30,13 @@ export class GamesListComponent implements OnInit {
   }
 
   onGameChange(event: any) {
-    if(event.value != null){
-      this.currentGame = event.value
+    if (event.value != null) {
+      this.currentGame = event.value;
       this.getCurrentGame();
     }
   }
 
-  getCurrentGame(){
+  getCurrentGame() {
     this.listGames.map((game) => {
       if (game.id == this.currentGame.id) {
         this.currentGame = game;
