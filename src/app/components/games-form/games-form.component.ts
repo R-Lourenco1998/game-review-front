@@ -87,11 +87,12 @@ export class GamesFormComponent implements OnInit {
       .add(() => {
         this.sendImageCover(id, this.imageCover);
       });
+      console.log(this.imageCover)
   }
 
   sendImageCover(id: number, imageCover: File) {
     this.gameService.uploadImageCover(imageCover, id).subscribe();
-    //this.gameForm.reset();
-    //this.router.navigate(['games']);
+    this.gameForm.reset();
+    this.router.navigate(['games']);
   }
 }
