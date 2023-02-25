@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Game } from '../model/Game';
+import { Game } from '../model/Game.model';
 import { GameDropdown } from '../model/game-dropdown';
 
 @Injectable({
@@ -18,6 +18,10 @@ export class GameService {
 
   findAllPlatformsDropdown(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/api/game/platforms`);
+  }
+
+  findAllGenreDropdown(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/api/game/genres`);
   }
 
   findGameById(id: number): Observable<Game> {

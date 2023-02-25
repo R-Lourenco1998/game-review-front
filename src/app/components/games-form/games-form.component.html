@@ -15,8 +15,8 @@
     <mat-form-field appearance="fill">
       <mat-label>Plataformas</mat-label>
       <mat-select formControlName="platform" multiple>
-        <mat-option *ngFor="let platform of platforms" [value]="platform">{{
-          platform
+        <mat-option *ngFor="let platform of platforms" [value]="platform.name">{{
+          platform.name
         }}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -48,16 +48,14 @@
   <div
     style="display: flex; flex-direction: row; justify-content: space-between"
   >
-    <mat-form-field class="full-width">
-      <mat-label>Gênero</mat-label>
-      <input
-        matInput
-        placeholder="Gênero"
-        formControlName="genre"
-        name="genre"
-      />
-    </mat-form-field>
-
+  <mat-form-field appearance="fill">
+    <mat-label>Gênero</mat-label>
+    <mat-select formControlName="genre" multiple>
+      <mat-option *ngFor="let genre of genres" [value]="genre.id">{{
+        genre.name
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
     <mat-form-field>
       <mat-label>Data de Lançamento</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="releaseDate" />
