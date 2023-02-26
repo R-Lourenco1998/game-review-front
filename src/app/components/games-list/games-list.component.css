@@ -18,7 +18,7 @@ mat-card {
 
 .game-cover {
   height: 158px;
-  width: 288px;
+  width: 24rem;
   background: black;
   margin-right: 10px;
   background: black;
@@ -32,7 +32,7 @@ mat-card {
 
 .listagem {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -19,6 +19,8 @@ import { GameService } from 'src/app/services/game.service';
 export class GamesFormComponent implements OnInit {
   public gameForm!: FormGroup;
 
+  @ViewChild('fileInputList') fileInputList: any;
+  @ViewChild('fileInputCover') fileInputCover: any;
   platforms: Platform[] = [];
   genres: Genre[] = [];
   game = new Game();

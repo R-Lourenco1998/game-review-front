@@ -15,7 +15,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Plataformas</mat-label>
       <mat-select formControlName="platform" multiple>
-        <mat-option *ngFor="let platform of platforms" [value]="platform.name">{{
+        <mat-option *ngFor="let platform of platforms" [value]="platform.id">{{
           platform.name
         }}</mat-option>
       </mat-select>
@@ -48,14 +48,14 @@
   <div
     style="display: flex; flex-direction: row; justify-content: space-between"
   >
-  <mat-form-field appearance="fill">
-    <mat-label>Gênero</mat-label>
-    <mat-select formControlName="genre" multiple>
-      <mat-option *ngFor="let genre of genres" [value]="genre.id">{{
-        genre.name
-      }}</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Gênero</mat-label>
+      <mat-select formControlName="genre" multiple>
+        <mat-option *ngFor="let genre of genres" [value]="genre.id">{{
+          genre.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
     <mat-form-field>
       <mat-label>Data de Lançamento</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="releaseDate" />
@@ -64,33 +64,51 @@
     </mat-form-field>
   </div>
 
-    <div style="display: flex; flex-direction: row; justify-content: space-between">
-      <span>
-        Escolha uma imagem para listagem:
-        <input
-          type="file"
-          (change)="onImageListChange($event)"
-          placeholder="Imagem para listagem"
-        />
-      </span>
-      <span>
-        Escolha uma imagem para capa
-        <input
-          type="file"
-          (change)="onImageCoverChange($event)"
-          placeholder="Imagem para capa"
-        />
-      </span>
-    </div>
-    <mat-form-field class="full-width">
-      <mat-label>Descrição</mat-label>
+  <div style="display: flex; flex-direction: row; align-items: center">
+    <mat-label>
+      Escolha uma imagem para listagem (PNG):
       <input
-        matInput
-        placeholder="Descrição"
-        formControlName="description"
-        name="description"
+        type="file"
+        accept="image/png"
+        (change)="onImageListChange($event)"
+        id="fileInputList"
+        #fileInputList
+        style="display: none"
       />
-    </mat-form-field>
+    </mat-label>
+    <div>
+      <button class="image" mat-mini-fab color="primary" (click)="fileInputList.click()">
+        <mat-icon>image</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: row; align-items: center">
+    <mat-label>
+      Escolha uma imagem para capa (JPG/JPEG):
+      <input
+        type="file"
+        accept="image/jpeg"
+        (change)="onImageCoverChange($event)"
+        style="display: none"
+        id="fileInputCover"
+        #fileInputCover
+      />
+    </mat-label>
+    <div>
+      <button class="image" mat-mini-fab color="primary" (click)="fileInputCover.click()">
+        <mat-icon>image</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-form-field class="full-width">
+    <mat-label>Descrição</mat-label>
+    <input
+      matInput
+      placeholder="Descrição"
+      formControlName="description"
+      name="description"
+    />
+  </mat-form-field>
   <div>
     <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
     <button mat-raised-button (click)="onSubmit()" color="primary">
