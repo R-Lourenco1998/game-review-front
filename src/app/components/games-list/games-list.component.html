@@ -5,7 +5,7 @@
 <mat-card>
   <mat-card-content>
     <section class="listagem">
-      <ng-template ngFor let-game [ngForOf]="AllGames">
+      <ng-template ngFor let-game [ngForOf]="AllGames.content">
         <a [routerLink]="['details', game.id]" class="game" *ngIf="game.name">
           <img
             mat-card-image
