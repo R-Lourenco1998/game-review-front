@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Game } from '../model/Game.model';
 import { GameDropdown } from '../model/game-dropdown';
+import { Platform } from '../model/Platform.model';
+import { Genre } from '../model/Genre.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,11 +18,11 @@ export class GameService {
     return this.http.get<Game[]>(`${this.baseUrl}/api/game`);
   }
 
-  findAllPlatformsDropdown(): Observable<any[]> {
+  findAllPlatformsDropdown(): Observable<Platform[]> {
     return this.http.get<any[]>(`${this.baseUrl}/api/game/platforms`);
   }
 
-  findAllGenreDropdown(): Observable<any[]> {
+  findAllGenreDropdown(): Observable<Genre[]> {
     return this.http.get<any[]>(`${this.baseUrl}/api/game/genres`);
   }
 

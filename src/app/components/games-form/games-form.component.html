@@ -111,7 +111,7 @@
   </mat-form-field>
   <div>
     <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
-    <button mat-raised-button (click)="onSubmit()" color="primary">
+    <button [disabled]="!gameForm.valid" mat-raised-button (click)="onSubmit()" color="primary">
       Adicionar
     </button>
   </div>

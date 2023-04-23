@@ -28,7 +28,6 @@ export class GamesFormComponent implements OnInit {
   date: Date = new Date();
   imageList: File = new File([], '');
   imageCover: File = new File([], '');
-  createGameId: number = 0;
 
   ngOnInit(): void {
     this.gameForm = this.fb.group({
@@ -77,8 +76,7 @@ export class GamesFormComponent implements OnInit {
     this.game.publisher = this.gameForm.get('publisher')?.value;
 
     this.gameService.createGame(this.game).subscribe(async (data) => {
-      this.createGameId = data.id;
-      await this.sendImageList(this.createGameId, this.imageList);
+      await this.sendImageList(data.id, this.imageList);
     });
   }
 
@@ -89,7 +87,7 @@ export class GamesFormComponent implements OnInit {
       .add(() => {
         this.sendImageCover(id, this.imageCover);
       });
-      console.log(this.imageCover)
+    console.log(this.imageCover);
   }
 
   sendImageCover(id: number, imageCover: File) {
