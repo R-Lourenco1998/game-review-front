@@ -95,4 +95,11 @@ export class GamesFormComponent implements OnInit {
     this.gameForm.reset();
     this.router.navigate(['games']);
   }
+
+  errorValidDescription() {
+    if (this.gameForm.get('description')?.invalid) {
+      return 'O campo descrição deve conter no mínimo 50 caracteres';
+    }
+    return false;
+  }
 }

@@ -77,7 +77,12 @@
       />
     </mat-label>
     <div>
-      <button class="image" mat-mini-fab color="primary" (click)="fileInputList.click()">
+      <button
+        class="image"
+        mat-mini-fab
+        color="primary"
+        (click)="fileInputList.click()"
+      >
         <mat-icon>image</mat-icon>
       </button>
     </div>
@@ -95,7 +100,12 @@
       />
     </mat-label>
     <div>
-      <button class="image" mat-mini-fab color="primary" (click)="fileInputCover.click()">
+      <button
+        class="image"
+        mat-mini-fab
+        color="primary"
+        (click)="fileInputCover.click()"
+      >
         <mat-icon>image</mat-icon>
       </button>
     </div>
@@ -108,10 +118,17 @@
       formControlName="description"
       name="description"
     />
+    <!-- <mat-error *ngIf="gameForm.get('description')?.invalid">{{
+      errorValidDescription()
+    }}</mat-error> -->
   </mat-form-field>
   <div>
     <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
-    <button [disabled]="!gameForm.valid" mat-raised-button (click)="onSubmit()" color="primary">
+    <button
+      mat-raised-button
+      (click)="onSubmit()"
+      color="primary"
+    >
       Adicionar
     </button>
   </div>
