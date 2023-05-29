@@ -87,7 +87,6 @@ export class GamesFormComponent implements OnInit {
       .add(() => {
         this.sendImageCover(id, this.imageCover);
       });
-    console.log(this.imageCover);
   }
 
   sendImageCover(id: number, imageCover: File) {

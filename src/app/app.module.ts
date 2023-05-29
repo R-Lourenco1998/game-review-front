@@ -17,6 +17,7 @@ import localePT from '@angular/common/locales/pt';
 import { GamesFormComponent } from './components/game/games-form/games-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { AuthModule } from './components/auth/auth.module';
 registerLocaleData(localePT);
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ registerLocaleData(localePT);
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AuthModule
   ],
   providers: [
     {

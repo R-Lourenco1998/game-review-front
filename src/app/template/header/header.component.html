@@ -1,4 +1,4 @@
-<mat-toolbar class="header">
+<mat-toolbar *ngIf="isAuthenticated()" class="header">
   <div class="title">
     <a routerLink="/home">
       <span class="title-header">Game Review</span>
