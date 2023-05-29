@@ -27,7 +27,7 @@ registerLocaleData(localePT);
     GamesListComponent,
     HomeComponent,
     GameDetailsComponent,
-    GamesFormComponent
+    GamesFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +39,12 @@ registerLocaleData(localePT);
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ {
-    provide: MAT_DATE_LOCALE, useValue: 'pt-BR'
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'pt-BR',
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
