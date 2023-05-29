@@ -8,13 +8,13 @@ import { HeaderComponent } from './template/header/header.component';
 import { AppMaterialModule } from './shared/app-material/app-material.module';
 import { FooterComponent } from './template/footer/footer.component';
 import { NavComponent } from './template/nav/nav.component';
-import { GamesListComponent } from './components/games-list/games-list.component';
+import { GamesListComponent } from './components/game/games-list/games-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { GameDetailsComponent } from './components/game-details/game-details.component';
+import { GameDetailsComponent } from './components/game/game-details/game-details.component';
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
-import { GamesFormComponent } from './components/games-form/games-form.component';
+import { GamesFormComponent } from './components/game/games-form/games-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 registerLocaleData(localePT);
@@ -27,7 +27,7 @@ registerLocaleData(localePT);
     GamesListComponent,
     HomeComponent,
     GameDetailsComponent,
-    GamesFormComponent,
+    GamesFormComponent
   ],
   imports: [
     BrowserModule,
