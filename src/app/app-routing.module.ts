@@ -9,7 +9,7 @@ import { SignComponent } from './components/auth/pages/sign/sign.component';
 
 const routes: Routes = [
   { path: 'games', component: GamesListComponent },
-  { path: '', component: SignComponent },
+  { path: '', component: SignComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent },
   { path: 'games/details/:id', component: GameDetailsComponent },
   {
