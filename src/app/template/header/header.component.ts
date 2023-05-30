@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KeyStorageUtil } from 'src/app/Util/KeyStorage.util';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,8 +9,16 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService) {}
+  username: string = '';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const userJson = localStorage.getItem(KeyStorageUtil.USER);
+
+    if (userJson) {
+      const user = JSON.parse(userJson);
+      this.username = user.username;
+    }
+  }
 
   isAuthenticated(): boolean {
     return this.authService.isAuthenticated();
