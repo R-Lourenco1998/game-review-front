@@ -30,7 +30,7 @@ export class SignComponent implements OnInit {
         })
         .subscribe({
           next: (res) => res,
-          error: (err) => (this.msgError = err),
+          error: (err) => (this.msgError = err.error.message),
         });
     }
   }

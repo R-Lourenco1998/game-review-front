@@ -27,7 +27,7 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(63, 100, 246);
+  background-color: rgb(75 112 255);
 }
 
 .main-container {
@@ -35,8 +35,19 @@ input {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("../../../../../assets/img/retro-game-synthwave.jpg") no-repeat;
+  background: url("../../../../../assets/img/retro-game-synthwave.jpg")
+    no-repeat;
   background-size: cover;
+}
+
+.error-msg {
+  margin-top: 5px;
+  color: rgb(234, 19, 19);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.teste {
 }
 
 .btn-vermelho {
@@ -45,13 +56,13 @@ input {
   margin: 25px 0 0;
   border: 0;
   border-radius: 10px;
-  background: #de1d43;
+  background: #e10f39;
   color: #ffffff;
   font-size: 18px;
   cursor: pointer;
 
   &:disabled {
     cursor: no-drop;
-    background: darken(#DD0330, 20%);
+    background: darken(#dd0330, 20%);
   }
 }
