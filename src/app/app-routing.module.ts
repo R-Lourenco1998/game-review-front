@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GamesListComponent } from './components/games-list/games-list.component';
+import { GamesListComponent } from './components/game/games-list/games-list.component';
 import { HomeComponent } from './components/home/home.component';
-import { GameDetailsComponent } from './components/game-details/game-details.component';
-import { GamesFormComponent } from './components/games-form/games-form.component';
+import { GameDetailsComponent } from './components/game/game-details/game-details.component';
+import { GamesFormComponent } from './components/game/games-form/games-form.component';
+import { AuthGuard } from './guard/auth.guard';
+import { SignComponent } from './components/auth/pages/sign/sign.component';
 
 const routes: Routes = [
   { path: 'games', component: GamesListComponent },
-  { path: '', component: HomeComponent },
+  { path: '', component: SignComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'games/details/:id', component: GameDetailsComponent },
-  { path: 'create', component: GamesFormComponent },
+  {
+    path: 'create',
+    canActivate: [AuthGuard],
+    component: GamesFormComponent,
+  },
 ];
 
 @NgModule({
