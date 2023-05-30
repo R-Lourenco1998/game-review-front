@@ -1,0 +1,36 @@
+<mat-card class="card">
+  <div class="game_page_title">{{ game.name }}</div>
+  <div class="div-image">
+    <img mat-card-image [src]="game.imageCoverUrl" class="" [alt]="game.name" />
+  </div>
+  <div class="description">{{ game.description }}</div>
+
+  <mat-card-content>
+    <div class="subtitle">
+      Data de lançamento:
+      {{ game.releaseDate | date : "shortDate" : "" : "pt-BR" }}
+    </div>
+    <div class="subtitle">Desenvolvido por: {{ game.developer }}</div>
+    <div class="subtitle">Publicado por: {{ game.publisher }}</div>
+    <div class="subtitle">Plataformas: {{ game.platformNames }}</div>
+    <div class="subtitle">Gêneros: {{ game.genreNames }}</div></mat-card-content
+  >
+</mat-card>
+
+<!-- <div class="card">
+  <div class="game_page_title">{{ game.name }}</div>
+  <div>
+    <img mat-card-image [src]="game.imageCoverUrl" class="" [alt]="game.name" />
+
+    <div style="display: flex; flex-direction: row; align-items: flex-start">
+      <div>
+        <div class="subtitle">Data de lançamento: {{ game.releaseDate | date : "shortDate" : "" : "pt-BR" }}</div>
+        <div class="subtitle">Desenvolvido por: {{ game.developer }}</div>
+        <div class="subtitle">Publicado por: {{ game.publisher }}</div>
+        <div class="subtitle">Plataformas: {{ game.platformNames }}</div>
+        <div class="subtitle">Gêneros: {{ game.genreNames }}</div>
+      </div>
+      <div class="description">{{ game.description }}</div>
+    </div>
+  </div>
+</div> -->

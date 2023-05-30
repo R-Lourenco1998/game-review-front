@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -19,6 +19,8 @@ import { GameService } from 'src/app/services/game.service';
 export class GamesFormComponent implements OnInit {
   public gameForm!: FormGroup;
 
+  @ViewChild('fileInputList') fileInputList: any;
+  @ViewChild('fileInputCover') fileInputCover: any;
   platforms: Platform[] = [];
   genres: Genre[] = [];
   game = new Game();
@@ -26,7 +28,6 @@ export class GamesFormComponent implements OnInit {
   date: Date = new Date();
   imageList: File = new File([], '');
   imageCover: File = new File([], '');
-  createGameId: number = 0;
 
   ngOnInit(): void {
     this.gameForm = this.fb.group({
@@ -75,8 +76,7 @@ export class GamesFormComponent implements OnInit {
     this.game.publisher = this.gameForm.get('publisher')?.value;
 
     this.gameService.createGame(this.game).subscribe(async (data) => {
-      this.createGameId = data.id;
-      await this.sendImageList(this.createGameId, this.imageList);
+      await this.sendImageList(data.id, this.imageList);
     });
   }
 
@@ -87,12 +87,18 @@ export class GamesFormComponent implements OnInit {
       .add(() => {
         this.sendImageCover(id, this.imageCover);
       });
-      console.log(this.imageCover)
   }
 
   sendImageCover(id: number, imageCover: File) {
     this.gameService.uploadImageCover(imageCover, id).subscribe();
     this.gameForm.reset();
     this.router.navigate(['games']);
+  }
+
+  errorValidDescription() {
+    if (this.gameForm.get('description')?.invalid) {
+      return 'O campo descrição deve conter no mínimo 50 caracteres';
+    }
+    return false;
   }
 }

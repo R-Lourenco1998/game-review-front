@@ -16,3 +16,9 @@ p{
   padding: 0% 1%;
   border-radius: 20px;
 }
+
+.mat-toolbar a:link,
+.mat-toolbar a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}

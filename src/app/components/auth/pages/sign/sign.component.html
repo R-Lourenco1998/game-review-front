@@ -1,0 +1,26 @@
+<div class="main-container">
+  <div class="container">
+    <img
+      src="../../../../../assets/img/game-controller.svg"
+      alt="Logo da Empresa"
+    />
+    <form [formGroup]="formAuth" (ngSubmit)="submitForm()">
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="Usuário"
+        required
+      />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Senha"
+        required
+      />
+      <button class="btn-vermelho">Login</button>
+      <div class="teste">
+        <p class="error-msg">{{ msgError }}</p>
+      </div>
+    </form>
+  </div>
+</div>
