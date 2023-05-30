@@ -13,7 +13,11 @@ import { KeyStorageUtil } from '../Util/KeyStorage.util';
 })
 export class AuthService {
   baseUrl: String = environment.baseUrl;
-  constructor(private http: HttpClient, private router: Router, private userService: UserService) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private userService: UserService
+  ) {}
   public sign(payload: {
     username: string;
     password: string;
@@ -26,13 +30,11 @@ export class AuthService {
       .pipe(
         switchMap((data) => {
           localStorage.removeItem(KeyStorageUtil.ACCESS_TOKEN);
-          localStorage.removeItem(KeyStorageUtil.USERNAME);
           localStorage.setItem(KeyStorageUtil.ACCESS_TOKEN, data.token);
-          localStorage.setItem(KeyStorageUtil.USERNAME, data.username);
-          return this.userService.findUserByUsername(data.username); // Chama o método findUserByUsername com o username obtido no login
+          return this.userService.findUserByUsername(data.username);
         }),
         tap((user) => {
-          localStorage.setItem('user', JSON.stringify(user)); // Salva o objeto de resposta no localStorage
+          localStorage.setItem('user', JSON.stringify(user));
           this.router.navigate(['home']);
         }),
         catchError((err) => {
@@ -44,7 +46,6 @@ export class AuthService {
 
   public logout() {
     localStorage.removeItem(KeyStorageUtil.ACCESS_TOKEN);
-    localStorage.removeItem(KeyStorageUtil.USERNAME);
     localStorage.removeItem(KeyStorageUtil.USER);
     return this.router.navigate(['']);
   }
