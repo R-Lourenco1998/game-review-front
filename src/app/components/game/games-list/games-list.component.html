@@ -1,6 +1,6 @@
 <div style="display: flex; flex-direction: column; align-items: flex-start;">
   <h1>Games</h1>
-  <button mat-raised-button color="primary" routerLink="/create">Cadastrar Jogo</button>
+  <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/create">Cadastrar Jogo</button>
 </div>
 <mat-card>
   <mat-card-content>

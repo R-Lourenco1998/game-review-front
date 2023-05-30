@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameDropdown } from 'src/app/model/game-dropdown';
 import { Game } from 'src/app/model/Game.model';
 import { Platform } from 'src/app/model/Platform.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { GameService } from 'src/app/services/game.service';
 @Component({
   selector: 'app-games-list',
@@ -16,10 +17,15 @@ export class GamesListComponent implements OnInit {
   currentGame = new Game();
 
   platform = new Platform();
-  constructor(private gameService: GameService) {}
+  constructor(private gameService: GameService, private authService: AuthService) {}
+
 
   ngOnInit(): void {
     this.getAllGames();
+  }
+
+  isAdmin(): boolean {
+    return this.authService.isAdmin();
   }
 
   getAllGames(): void {
