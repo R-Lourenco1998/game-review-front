@@ -32,7 +32,6 @@ mat-card {
 
 .listagem {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
