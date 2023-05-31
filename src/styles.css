@@ -27,7 +27,7 @@ body {
   color: white;
 }
 
-.mat-toolbar-row,
+/* .mat-toolbar-row,
 .mat-toolbar-single-row {
   display: flex;
   box-sizing: border-box;
@@ -37,7 +37,7 @@ body {
   align-items: center;
   white-space: nowrap;
   justify-content: center;
-}
+} */
 
 .mat-toolbar,
 header mat-toolbar-single-row {

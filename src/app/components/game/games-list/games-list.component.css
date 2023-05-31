@@ -17,17 +17,15 @@ mat-card {
 }
 
 .game-cover {
-  height: 158px;
-  width: 24rem;
-  background: black;
-  margin-right: 10px;
-  background: black;
-  margin-right: 10px;
-  /* resize: vertical; */
-  object-fit: fill;
-  /* display: flex; */
   height: 14rem;
-  margin-left: 1em;
+  width: 100%;
+  background: black;
+  object-fit: fill;
+  margin-bottom: 10px;
+}
+
+.clearfix {
+  clear: both;
 }
 
 .listagem {
