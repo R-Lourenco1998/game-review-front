@@ -1,33 +1,14 @@
-<!-- <div style="display: flex; flex-direction: column; align-items: flex-start;">
-  <h1>Games</h1>
-  <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/create">Cadastrar Jogo</button>
-</div>
-<mat-card>
-  <mat-card-content>
-    <section class="listagem">
-      <ng-template ngFor let-game [ngForOf]="AllGames?.content">
-        <a [routerLink]="['details', game.id]" class="game" *ngIf="game.name">
-          <img
-            mat-card-image
-            [src]="game.imageUrl"
-            class="game-cover"
-            [alt]="game.name"
-          />
-        </a>
-      </ng-template>
-    </section>
-  </mat-card-content>
-</mat-card> -->
-
 <div class="container">
-  <div style="align-self: flex-start; margin-bottom: 10px;">
-    <h1 class="game_list_title">Jogos disponíveis: {{AllGames?.totalElements}}</h1>
+  <div style="align-self: flex-start; margin-bottom: 10px">
+    <h1 class="game_list_title">
+      Jogos disponíveis: {{ AllGames?.totalElements }}
+    </h1>
     <button
       *ngIf="isAdmin()"
       mat-raised-button
       color="primary"
-      routerLink="/create"
-      style="width: 100%;"
+      (click)="openDialog()"
+      style="width: 100%"
     >
       Cadastrar Jogo
     </button>
