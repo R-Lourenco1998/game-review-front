@@ -1,15 +1,17 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Game } from 'src/app/model/Game.model';
 import { Platform } from 'src/app/model/Platform.model';
 import { Genre } from 'src/app/model/Genre.model';
 import { GameService } from 'src/app/services/game.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-games-form',
@@ -21,6 +23,7 @@ export class GamesFormComponent implements OnInit {
 
   @ViewChild('fileInputList') fileInputList: any;
   @ViewChild('fileInputCover') fileInputCover: any;
+  @Output() modalClosed = new EventEmitter();
   platforms: Platform[] = [];
   genres: Genre[] = [];
   game = new Game();
@@ -51,7 +54,8 @@ export class GamesFormComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private gameService: GameService
+    private gameService: GameService,
+    private dialogRef: MatDialogRef<GamesFormComponent>
   ) {}
 
   cancel(): void {
@@ -78,6 +82,12 @@ export class GamesFormComponent implements OnInit {
     this.gameService.createGame(this.game).subscribe(async (data) => {
       await this.sendImageList(data.id, this.imageList);
     });
+    this.closeModal();
+  }
+
+  closeModal() {
+    this.dialogRef.close();
+    this.modalClosed.emit();
   }
 
   sendImageList(id: number, imageList: File) {

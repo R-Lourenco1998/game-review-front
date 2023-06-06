@@ -17,9 +17,32 @@
   </div>
 
   <div class="button-logout">
-    <p>Olá, {{ username }}!</p>
-    <button (click)="logout()" mat-icon-button>
-      <mat-icon>logout</mat-icon>
+    <p style="margin-top: 6px">Olá, {{ username }}!</p>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
     </button>
   </div>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item disabled="true">
+      <mat-icon>videogame_asset</mat-icon>
+      <span>Meus Games</span>
+    </button>
+    <button mat-menu-item disabled="true">
+      <mat-icon>account_circle</mat-icon>
+      <span>Perfil</span>
+    </button>
+    <button *ngIf="isAdmin()" disabled="true" mat-menu-item>
+      <mat-icon>manage_accounts</mat-icon>
+      <span>Administrativo</span>
+    </button>
+    <button (click)="logout()" mat-menu-item>
+      <mat-icon>logout</mat-icon>
+      <span>Sair</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>

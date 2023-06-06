@@ -27,23 +27,33 @@ export class GameService {
   }
 
   findAllPlatformsDropdown(): Observable<Platform[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/api/game/platforms`);
+    return this.http.get<any[]>(`${this.baseUrl}/api/game/platforms`, {
+      headers: this.headers,
+    });
   }
 
   findAllGenreDropdown(): Observable<Genre[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/api/game/genres`);
+    return this.http.get<any[]>(`${this.baseUrl}/api/game/genres`, {
+      headers: this.headers,
+    });
   }
 
   findGameById(id: number): Observable<Game> {
-    return this.http.get<Game>(`${this.baseUrl}/api/game/${id}`);
+    return this.http.get<Game>(`${this.baseUrl}/api/game/${id}`, {
+      headers: this.headers,
+    });
   }
 
   findAllDropdown(): Observable<GameDropdown[]> {
-    return this.http.get<GameDropdown[]>(`${this.baseUrl}/api/game/list`);
+    return this.http.get<GameDropdown[]>(`${this.baseUrl}/api/game/list`, {
+      headers: this.headers,
+    });
   }
 
   createGame(game: Game): Observable<Game> {
-    return this.http.post<Game>(`${this.baseUrl}/api/game`, game);
+    return this.http.post<Game>(`${this.baseUrl}/api/game`, game, {
+      headers: this.headers,
+    });
   }
 
   uploadImageList(imageList: File, id: number): Observable<any> {
@@ -51,7 +61,10 @@ export class GameService {
     formData.append('imageList', imageList);
     return this.http.post(
       `${this.baseUrl}/api/game/image/list/${id}`,
-      formData
+      formData,
+      {
+        headers: this.headers,
+      }
     );
   }
 
@@ -60,7 +73,9 @@ export class GameService {
     formData.append('imageCover', imageCover);
     return this.http.post(
       `${this.baseUrl}/api/game/image/cover/${id}`,
-      formData
+      formData, {
+        headers: this.headers,
+      }
     );
   }
 }

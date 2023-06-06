@@ -6,15 +6,16 @@ import { GameDetailsComponent } from './components/game/game-details/game-detail
 import { GamesFormComponent } from './components/game/games-form/games-form.component';
 import { AuthGuard } from './guard/auth.guard';
 import { SignComponent } from './components/auth/pages/sign/sign.component';
+import { AdminGuard } from './guard/admin.guard';
 
 const routes: Routes = [
   { path: 'games', component: GamesListComponent },
-  { path: '', component: SignComponent },
+  { path: '', component: SignComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent },
   { path: 'games/details/:id', component: GameDetailsComponent },
   {
     path: 'create',
-    canActivate: [AuthGuard],
+    canActivate: [AdminGuard],
     component: GamesFormComponent,
   },
 ];
