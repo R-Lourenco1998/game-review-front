@@ -13,6 +13,36 @@
       Cadastrar Jogo
     </button>
   </div>
+  <mat-grid-list cols="4" rowHeight="1:1" gutterSize="10px">
+    <mat-grid-tile *ngFor="let game of AllGames?.content">
+      <a [routerLink]="['details', game.id]" class="game">
+        <img
+          mat-card-image
+          [src]="game.imageUrl"
+          class="game-cover"
+          [alt]="game.name"
+        />
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="clearfix"></div>
+</div>
+<!-- <div class="container">
+  <div style="align-self: flex-start; margin-bottom: 10px">
+    <h1 class="game_list_title">
+      Jogos disponíveis: {{ AllGames?.totalElements }}
+    </h1>
+    <button
+      *ngIf="isAdmin()"
+      mat-raised-button
+      color="primary"
+      (click)="openDialog()"
+      style="width: 100%"
+    >
+      Cadastrar Jogo
+    </button>
+  </div>
   <div class="row">
     <ng-template ngFor let-game [ngForOf]="AllGames?.content">
       <div class="col-md-4 col-sm-6 col-xs-12">
@@ -29,4 +59,5 @@
   </div>
 
   <div class="clearfix"></div>
-</div>
+</div> -->
+

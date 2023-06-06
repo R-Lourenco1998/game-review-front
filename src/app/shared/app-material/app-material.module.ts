@@ -16,6 +16,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
   exports: [
     MatCardModule,
@@ -44,7 +45,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatMenuModule,
     MatNativeDateModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ]
 })
 export class AppMaterialModule { }
