@@ -9,7 +9,7 @@ import { GamesFormComponent } from '../games-form/games-form.component';
 @Component({
   selector: 'app-games-list',
   templateUrl: './games-list.component.html',
-  styleUrls: ['./games-list.component.css'],
+  styleUrls: ['./games-list.component.scss'],
 })
 export class GamesListComponent implements OnInit {
   gamesDropdown: GameDropdown[] = [];

@@ -16,7 +16,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-games-form',
   templateUrl: './games-form.component.html',
-  styleUrls: ['./games-form.component.css'],
+  styleUrls: ['./games-form.component.scss'],
 })
 export class GamesFormComponent implements OnInit {
   public gameForm!: FormGroup;

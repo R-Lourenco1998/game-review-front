@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-sign',
   templateUrl: './sign.component.html',
-  styleUrls: ['./sign.component.css'],
+  styleUrls: ['./sign.component.scss'],
 })
 export class SignComponent implements OnInit {
   public formAuth: FormGroup = this.formBuilder.group({

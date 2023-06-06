@@ -5,7 +5,7 @@ import { KeyStorageUtil } from 'src/app/Util/KeyStorage.util';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService) {}
